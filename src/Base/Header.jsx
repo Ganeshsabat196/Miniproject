@@ -1,6 +1,8 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-
+import logo from '../img/logo.gif'
+import Login from "../security/Login"
+// import "../security/style.css"
 export default function Header() {
   return (
     <>
@@ -11,11 +13,12 @@ export default function Header() {
       >
         <nav role="navigation">
           <div className="styledComponents__Container-sc-1iil5m-1 fwPEHW">
-            <a data-ga-label="Home" href="/">
-              <div className="styledComponents__Wrapper-ptrp9q-2 bcacLH">
-                <i className="styledComponents__Paw-ptrp9q-0 hjlZJA fa fa-paw" />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
+            {/* <a data-ga-label="Home" href="/"> */}
+              {/* <div className="styledComponents__Wrapper-ptrp9q-2 bcacLH"> */}
+                <img src={logo} alt="Logo" style={{width:"200px"}} />
+                {/* <i className="styledComponents__Paw-ptrp9q-0 hjlZJA fa fa-paw" /> */}
+                 {/* <svg
+                  xmlns="http://www.w3.org/2000/svg"  
                   viewBox="0 0 294.38 55.75"
                   className="styledComponents__Svg-ptrp9q-1 jDrsaJ"
                 >
@@ -23,7 +26,7 @@ export default function Header() {
                     className="logo"
                     d="M3.35,38.15,3.58,37H34.67l-.23,1.16h-15L11,78.17H9.79l8.52-40Z"
                     transform="translate(-3.35 -35.4)"
-                  />
+                  /> 
                   <path
                     className="logo"
                     d="M34,81.82l2.38-3.65-6.9-30.1h1.27l6.5,28.65,3.36-5.34C48,59.78,50.27,55.08,52.3,48.07h1.22c-2.09,7.48-4.23,11.89-12,24.12l-4.75,7.48c-5.51,8.71-7.48,10.73-12.3,11.49l-.11-1C29,89.25,30.49,87.27,34,81.82Z"
@@ -64,9 +67,9 @@ export default function Header() {
                     d="M269.35,42.54h-12V36.05h40.39v6.49h-12V78.17H269.35Z"
                     transform="translate(-3.35 -35.4)"
                   />
-                </svg>
-              </div>
-            </a>
+                </svg> */}
+              {/* </div> */}
+            {/* </a> */}
             <div className="styledComponents__Menu-sc-1iil5m-2 iiMpER">
               <ul>
                 {/* <li title="Typing Courses">
@@ -212,29 +215,35 @@ export default function Header() {
                 </li> */}
               </ul>
               <ul className="padding-right-0">
+                
                 <li>
-                  <a
+                  <NavLink
                     type="secondary"
                     className="styledComponents__Button-sc-1ynpvmz-0 errUJN"
-                    href="#"
+                    to="/signup"
                   >
-                    Sign Up
-                  </a>
+                    Sign up
+                  </NavLink>
+                 
                 </li>
-                <li className="margin-right-0">
-                  <a
-                    type="primary"
-                    className="styledComponents__Button-sc-1ynpvmz-0 exqth"
-                    href="#"
+                <li>
+                <NavLink
+                    type="secondary"
+                    className="styledComponents__Button-sc-1ynpvmz-0 errUJN"
+                    to="/signin"
                   >
-                    Sign In
-                  </a>
+                    Sign in
+                  </NavLink>
+                 
                 </li>
+                
               </ul>
             </div>
           </div>
+          
         </nav>
       </header>
+     
     </>
   )
 }

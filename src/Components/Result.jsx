@@ -28,7 +28,7 @@ export default function Result() {
                             <div className="col-xs-12 col-lg-8 col-lg-offset-2">
                                 <div className="row">
                                     <div className="col-xs-12">
-                                        <div className="col-xs-6 col-md-3">
+                                        <div className="col-xs-6 col-md-4">
                                             <div className="row text-center">
                                                 <h6 className="margin-bottom-5">
                                                     <span>Accuracy</span>
@@ -38,7 +38,7 @@ export default function Result() {
                                                 </h3>
                                             </div>
                                         </div>
-                                        <div className="col-xs-6 col-md-3">
+                                        <div className="col-xs-6 col-md-4">
                                             <div className="row text-center">
                                                 <h6 className="margin-bottom-5">
                                                     <span>Typing Speed</span>
@@ -48,7 +48,7 @@ export default function Result() {
                                                 </h3>
                                             </div>
                                         </div>
-                                        <div className="col-xs-6 col-md-3">
+                                        <div className="col-xs-6 col-md-4">
                                             <div className="row text-center better">
                                                 <h6>
                                                     <span>
@@ -58,14 +58,14 @@ export default function Result() {
                                                 </h6>
                                             </div>
                                         </div>
-                                        <div className="col-xs-6 col-md-3">
+                                        {/* <div className="col-xs-6 col-md-3">
                                             <div className="row text-center">
                                                 <h6 className="margin-bottom-5">
                                                     <span>Ranking in last 24hrs</span>
                                                 </h6>
                                                 <h3 className="margin-top-0 margin-bottom-5">319</h3>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
