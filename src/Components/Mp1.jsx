@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Css/style2.css'
 
 
-const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=200";
+const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=100";
 let quote = "";
 let time = 60;
 let timer = "";
@@ -134,8 +134,7 @@ export default function Mp() {
     const pass=(data1,data2)=>{
         navigate('/result', { state: {data1,data2} });
     }
-
-
+    
     // End test 
 
     const displayResult = () => {

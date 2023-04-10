@@ -1,67 +1,4 @@
-// import React, { Component } from 'react'
-// import "./login.css"
-// import { Button } from 'react-bootstrap/lib/InputGroup'
-// import Modal from 'react-bootstrap/Modal';
-// export default class SignUp extends Component {
-//   render() {
-//     const [show, setShow] = useState(false);
-
-//   const handleClose = () => setShow(false);
-//   const handleShow = () => setShow(true);
-//     return (
-//       // <div className="container" style={{ width: "50%", marginTop:"100px",border:"1px solid gray",padding:"20px",borderRadius:"20px"}}>
-//       //   <form>
-//       //     <h3 style={{
-//       //       display: "flex",
-//       //       justifyContent: "center"
-//       //     }}>Sign Up</h3>
-//       //     <div className="mb-3">
-//       //       <label>Name</label>
-//       //       <input
-//       //         type="text"
-//       //         className="form-control"
-//       //         placeholder="Enter Name"
-//       //       />
-//       //     </div>
-          
-          
-//       //     <div className="mb-3">
-//       //       <label>Password</label>
-//       //       <input
-//       //         type="password"
-//       //         className="form-control"
-//       //         placeholder="Enter password"
-//       //       />
-//       //     </div>
-//       //     <div className="d-grid">
-//       //       <button type="submit" className="btn btn-primary mt-5" style={{width:"20%",margin:"auto"}}>
-//       //         Sign Up
-//       //       </button>
-//       //     </div>
-//       //     <p className="forgot-password center text-right">
-//       //       Already registered <a href="/sign-in">sign in?</a>
-//       //     </p>
-//       //   </form>
-//       // </div>
-//       <Modal show={show} onHide={handleClose}>
-//         <Modal.Header closeButton>
-//           <Modal.Title>Modal heading</Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-//         <Modal.Footer>
-//           <Button variant="secondary" onClick={handleClose}>
-//             Close
-//           </Button>
-//           <Button variant="primary" onClick={handleClose}>
-//             Save Changes
-//           </Button>
-//         </Modal.Footer>
-//       </Modal>
-
-//     )
-//   }
-// }
-import React, { useState } from 'react';
+import React from 'react';
 import {
   MDBBtn,
   MDBContainer,
@@ -70,12 +7,17 @@ import {
   MDBCard,
   MDBCardBody,
   MDBInput,
-  MDBIcon,
   MDBCheckbox
 }
 from 'mdb-react-ui-kit';
-export default function Login() {
-  
+
+import { logindata } from '../Components/Api/api';
+import { useNavigate } from 'react-router-dom';
+
+export default function Login(props) {
+  const navigate = useNavigate();
+  console.log("here",props.props.login);
+
   return (
     <>
     <MDBContainer fluid>
@@ -89,12 +31,23 @@ export default function Login() {
         <h2 className="fw-bold mb-2 text-center">Sign in</h2>
         <p className="text-white-50 mb-3">Please enter your login and password!</p>
 
-        <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='formControlLg' type='email' size="lg" style={{border:"1px solid",borderRadius:"10px",padding:"8px"}}/>
-        <MDBInput wrapperClass='mb-4 w-100' label='Password' id='formControlLg' type='password' size="lg" style={{border:"1px solid",borderRadius:"10px",padding:"8px"}}/>
+        <MDBInput wrapperClass='mb-4 w-100' label='Email address' id='email' type='email' size="lg" style={{border:"1px solid",borderRadius:"10px",padding:"8px"}}/>
+        <MDBInput wrapperClass='mb-4 w-100' label='Password' id='password' type='password' size="lg" style={{border:"1px solid",borderRadius:"10px",padding:"8px"}}/>
 
         <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' />
 
-        <MDBBtn size='lg' disabled={false}>
+        <MDBBtn size='lg' disabled={false} onClick={async()=>{
+          let email=document.getElementById("email").value
+          let pass=document.getElementById("password").value
+          let res= await logindata(email)
+          if(res[0]!=undefined && res[0].password===pass){
+            props.props.setlogin(true)
+            console.log("login true");
+            navigate("/")
+          }else{
+            alert("Login Unsuccessful")
+          }
+        }}>
           Login
         </MDBBtn>
 

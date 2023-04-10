@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '../Base/Header';
 
 export default function Result() {
@@ -52,8 +52,7 @@ export default function Result() {
                                             <div className="row text-center better">
                                                 <h6>
                                                     <span>
-                                                        It is better than <h3 className="text-success">22.16%</h3>{" "}
-                                                        of all users
+                                                        Status<h3 className="text-success">Good</h3>{" "}
                                                     </span>
                                                 </h6>
                                             </div>
@@ -86,14 +85,14 @@ export default function Result() {
                                     <a className="addthis_button_compact" />
                                 </div>
                             </div>
-                            <a
+                            <Link
                                 className="btn btn-primary pull-right btn-lg"
                                 data-ga-label="Start New Test"
-                                href="/typing-speed-test/1m"
+                                to="/test"
                             >
                                 <i className="fa fa-dashboard" aria-hidden="true" />{" "}
                                 <span>Start New Test</span>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     <div className="row margin-top-40">
