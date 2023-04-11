@@ -27,6 +27,7 @@ function App() {
       <Route path='/contact'  element={<ContactForm props={{login,setlogin}}/>} ></Route>
       <Route path='/profile'  element={<Proflie props={{login,setlogin}}/>} ></Route>
       <Route path='/header'  element={<Header props={{login,setlogin}}/>} ></Route>
+      <Route path='/stats'  element={<Render />} ></Route>
       
 
     </Routes>

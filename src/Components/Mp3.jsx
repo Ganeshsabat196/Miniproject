@@ -11,7 +11,7 @@ let mistakes = 0;
 let oTime=300
 
 
-export default function Mp2() {
+export default function Mp3() {
     const navigate = useNavigate();
 
     //Display random quotes
@@ -125,6 +125,7 @@ export default function Mp2() {
         mistakes = 0;
         timer = "";
         userInput.disabled = false;
+        userInput.focus();
         timeReduce();
         document.getElementById("start-test").style.display = "none";
         document.getElementById("stop-test").style.display = "block";

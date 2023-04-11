@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Css/style2.css'
 
 
-const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=400";
+const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=300";
 let quote = "";
 let time = 180;
 let timer = "";
@@ -125,6 +125,7 @@ export default function Mp2() {
         mistakes = 0;
         timer = "";
         userInput.disabled = false;
+        userInput.focus();
         timeReduce();
         document.getElementById("start-test").style.display = "none";
         document.getElementById("stop-test").style.display = "block";

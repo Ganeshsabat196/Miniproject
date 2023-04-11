@@ -17,5 +17,5 @@ const Addcontactmsg =  new mongoose.Schema({
 })
 
 
-const Addcontact = mongoose.model('AddStudent',Addcontactmsg);
+const Addcontact = mongoose.model('Contact',Addcontactmsg);
 export default Addcontact;

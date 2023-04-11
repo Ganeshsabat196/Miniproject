@@ -5,6 +5,7 @@ import Footer from '../Base/Footer'
 import "./Css/style.css"
 import Mp1 from './Mp1'
 import Mp2 from './Mp2'
+import Mp3 from './Mp3'
 export default function Test() {
   const [form,setForm]=useState("60")
   return (
@@ -81,6 +82,7 @@ export default function Test() {
 
                                { form==="60" && <Mp1 />}
                                { form==="180" && <Mp2/>}
+                               { form==="300" && <Mp3/>}
 
                                 {/* <div className="brightnessBox hide">
                                   <p>
@@ -104,7 +106,8 @@ export default function Test() {
                   </div>
                   {/* <div className="row margin-bottom-20">
                                     <div className="col-xs-12 text-center" />
-                                </div> */}
+                  </div> */}
+
                   <div className="sections" style={{ marginTop: "100px" }}>
                     <div className="row">
                       <section className="col-md-4">

@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function Home() {
     return (
@@ -6,7 +7,7 @@ export default function Home() {
 
             <main id="main" >
                 <div className='flex flex-col sections' style={{ margin: "0" }}>
-                    <div className="flex flex-col sections" >
+                    <div className="flex flex-col sections" style={{margin:"1px"}}>
                         <section className="relative order-none" id="hero">
                             <img
                                 className="absolute w-[100%] h-[490px] hidden sm:hidden md:flex lg:flex"
@@ -207,6 +208,7 @@ export default function Home() {
                                                 </li>
                                             </ul>
                                            
+                                            <NavLink to="/test"><button style={{position:"absolute"}}> Start Now </button></NavLink>
                                         </div>
                                         <div className="laptop-col" style={{ width: "500px", height: "200px" ,position:"relative",left:"112px",bottom:"100px"}}>
                                             {/* <video src="https://www.typing.com/dist/site_typing/images/benefits/curriculum.mp4"></video> */}
@@ -278,9 +280,9 @@ export default function Home() {
                                                                                 className="Line__CharSpan-copnkx-0 lfqOzy char active "
                                                                                 data-char="t"
                                                                             >
-                                                                                t
+                                                                                S
                                                                             </span>
-                                                                            hetypingcat.com⏎
+                                                                            crubble⏎
                                                                         </span>
                                                                         <span className="char" />
                                                                     </div>
@@ -1247,7 +1249,7 @@ export default function Home() {
                         </div>
                     </section>
                     <section
-                        className="order-5 hidden px-6 pt-20 section exp-2d:block"
+                        className="order-5 hidden px-6 pt-20 section exp-2d:block my-5"
                         id="in_the_news"
                     >
                         <div className="max-w-screen-xl mx-auto">
@@ -1333,7 +1335,7 @@ export default function Home() {
                             </div>
                         </div>
                     </section>
-                    <section id="features" className="order-5 px-6">
+                    <section id="features" className="order-5 px-6 my-5">
                         <div className="max-w-screen-xl pb-20 mx-auto mt-36 md:mt-20">
                             <h2 className="text-2xl font-bold text-center text-blue-600 md:text-3xl">
                                 Go Beyond Typing with <br />

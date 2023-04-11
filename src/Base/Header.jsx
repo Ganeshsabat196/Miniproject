@@ -31,8 +31,8 @@ console.log("props",props);
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="nav-item nav-link">
-                    About Us
+                  <Link to="/stats" className="nav-item nav-link">
+                    Stats
                   </Link>
                 </li>
                 {/* <li className="dropdown">
