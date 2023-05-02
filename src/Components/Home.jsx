@@ -1433,7 +1433,7 @@ export default function Home() {
                                 className="flex items-center -mx-4 js-benefits-presentation"
                                 data-id="video"
                             >
-                                <div className="w-full lg:w-5/12 md:max-w-screen-sm md:mx-auto lg:max-w-none">
+                                <div className="w-full lg:w-5/12 md:max-w-screen-sm md:mx-auto lg:max-w-none" style={{display:"contents"}}>
                                     <div
                                         className="relative left-0 sm:left-0 md:left-4 lg:left-4 bg-white rounded-xl p-5 transition duration-75 ease-in-out card-benefit js-benefit is-active"
                                         data-id="curriculum"
@@ -1551,7 +1551,7 @@ export default function Home() {
                                     <div
                                         className="relative left-0 sm:left-0 md:left-4 lg:left-4 bg-white rounded-xl p-5 transition duration-75 ease-in-out card-benefit js-benefit mt-8 lg:mt-0"
                                         data-id="timed_response"
-                                    >
+                                      >
                                         <div className="mb-4 lg:hidden">
                                             <video
                                                 autoPlay=""

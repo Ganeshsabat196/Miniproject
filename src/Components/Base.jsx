@@ -4,12 +4,12 @@ import Footer from "../Base/Footer";
 import Home from "./Home";
 
 export default function Base(props) {
-  console.log("here1",props.props.login);
+  // console.log("here1",props.props.login);
   return (
     <>
       <div id="body">
           <div className="layout bright-theme">
-            <Header props={props.props.login}/>
+            <Header/>
             <Home />
             <Footer />
           </div>

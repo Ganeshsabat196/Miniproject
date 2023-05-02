@@ -1,18 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import "./navbar.css"
 export default function Header(props) {
 console.log("props",props);
-  const [login, setlogin] = useState(props.props)
+  // const [login, setlogin] = useState(props.props)
+  const [ user, setLoginUser] = useState()
+  // const [log,setlog]=useState(false);
 
+  useEffect(() => {
+    setLoginUser(localStorage.getItem("MyUser"))
+    console.log("hello",user)
+    // console.log("hekllo")
+  }, [])
+
+  const updateUser = (user) => {
+    localStorage.setItem("MyUser", JSON.stringify(user))
+    setLoginUser(user)
+  }
   return (
     <>
       <header className="header-area overlay">
         <nav className="navbar navbar-expand-md navbar-dark">
           <div className="container">
-            <a href="#" className="navbar-brand">
+            <Link to="/" className="navbar-brand">
               Scribble-Word
-            </a>
+            </Link>
             <button
               type="button"
               className="navbar-toggler collapsed"
@@ -31,7 +43,7 @@ console.log("props",props);
                   </Link>
                 </li>
                 <li>
-                  <Link to="/stats" className="nav-item nav-link">
+                  <Link to="/profile" className="nav-item nav-link">
                     Stats
                   </Link>
                 </li>
@@ -81,7 +93,8 @@ console.log("props",props);
               </ul>
               <ul className="padding-right-0" style={{ display: "flex", float: "right", marginTop: "16px" }}>
 
-                {login?<li>
+{/* {console.log(user)} */}
+                {user ?<li>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
@@ -95,7 +108,9 @@ console.log("props",props);
                   </a>
                   <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     <Link className="dropdown-item" to="/profile">Profile</Link>
-                    <Link className="dropdown-item" to="/messages">Your messages</Link>
+                    <Link className="dropdown-item" onClick={()=>{
+                      updateUser(false)
+                    }}>logout</Link>
                   </div>
                 </li>
               </ul>

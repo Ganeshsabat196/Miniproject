@@ -22,7 +22,7 @@ export default function Result() {
                             <h3 className="margin-bottom-40">
                                 <span>Your typing speed is</span>{" "}
                                 <b>
-                                    <span>{state.data1}</span>
+                                    <span>{state.data1} wpm</span>
                                 </b>
                             </h3>
                             <div className="col-xs-12 col-lg-8 col-lg-offset-2">
@@ -34,7 +34,7 @@ export default function Result() {
                                                     <span>Accuracy</span>
                                                 </h6>
                                                 <h3 className="margin-top-0 margin-bottom-5">
-                                                {state.data2}
+                                                {state.data2}%
                                                 </h3>
                                             </div>
                                         </div>
@@ -44,20 +44,22 @@ export default function Result() {
                                                     <span>Typing Speed</span>
                                                 </h6>
                                                 <h3 className="margin-top-0 margin-bottom-5">
-                                                    {state.data1}
+                                                    {state.data1}wpm 
                                                 </h3>
                                             </div>
                                         </div>
                                         <div className="col-xs-6 col-md-4">
                                             <div className="row text-center better">
                                                 <h6>
-                                                    <span>
-                                                        Status<h3 className="text-success">Good</h3>{" "}
-                                                    </span>
+                                                    {state.data1>=50 && state.data2==100?<span> Status<h3 className="text-success">Perfect</h3></span>:<></>}
+                                                    {state.data1>=30 && state.data1<50 && state.data2>=65?<span> Status<h3 className="text-success">Good</h3></span>:<></>}
+                                                    { state.data2<65?<span> Status<h3 className="text-success">Poor</h3></span>:<></>}
+                                                    { state.data1<30?<span> Status<h3 className="text-success">Poor</h3></span>:<></>}
+                                                    
                                                 </h6>
                                             </div>
                                         </div>
-                                        {/* <div className="col-xs-6 col-md-3">
+                                        {/* <div className="col-xs-6 col-md-3"> 
                                             <div className="row text-center">
                                                 <h6 className="margin-bottom-5">
                                                     <span>Ranking in last 24hrs</span>

@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Css/style2.css'
+import { dbdataadd } from './Api/api';
 
 
-const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=400";
+const quoteApiUrl = "https://api.quotable.io/random?minLength=80&maxLength=100";
 let quote = "";
 let time = 300;
 let timer = "";
@@ -124,6 +125,7 @@ export default function Mp3() {
 
         mistakes = 0;
         timer = "";
+
         userInput.disabled = false;
         userInput.focus();
         timeReduce();
@@ -134,9 +136,15 @@ export default function Mp3() {
     // passing value via props 
     const pass=(data1,data2)=>{
         navigate('/result', { state: {data1,data2} });
+        
     }
 
-
+    // add data to db 
+    const datadb=(data)=>{
+        console.log("hello");
+        dbdataadd(data)
+    }
+    
     // End test 
 
     const displayResult = () => {
@@ -158,8 +166,16 @@ export default function Mp3() {
                 ((userInput.value.length - mistakes) / userInput.value.length) * 100
             ) + " %";
 
-                pass(document.getElementById("wpm").innerText,document.getElementById("accuracy").innerText)
-    };
+            let data1=(userInput.value.length / 5 / timeTaken).toFixed(2);
+            // let data1=document.getElementById("wpm").innerText;
+            let data2=Math.round(((userInput.value.length - mistakes) / userInput.value.length) * 100);
+            // let data2=document.getElementById("accuracy").innerText;
+            let data3=oTime-time;
+            let data4=300;
+            let obj ={data1,data2,data3,data4}
+            datadb(obj)
+            pass(data1,data2)
+        };
 
     return (
         <div className="container1">
@@ -174,7 +190,6 @@ export default function Mp3() {
             <div id="quote"
             // onMouseDown={return false} 
             // onselectstart="return false"
-            style={{marginTop:"21px"}}
             ></div>
 
             <textarea

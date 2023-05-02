@@ -2,7 +2,7 @@
 import Student from "../model/StudentsSchema.js";
 import Addcontact from "../model/contact.js";
 import Newuser from "../model/userschema.js";
-
+import Datainp from "../model/input.js";
 
 const getStudents = async (req, res) => {
   try {
@@ -12,7 +12,33 @@ const getStudents = async (req, res) => {
     return res.status(500).json(error.message);
   }
 };
-
+const data1 = async (req, res) => {
+  try {
+    console.log(req.params);
+    const getdata = await Datainp.find({type:"60 sec game"});
+    return res.status(200).json(getdata);
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
+};
+const data2 = async (req, res) => {
+  try {
+    console.log(req.params);
+    const getdata = await Datainp.find({type:"180 sec game"});
+    return res.status(200).json(getdata);
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
+};
+const data3 = async (req, res) => {
+  try {
+    console.log(req.params);
+    const getdata = await Datainp.find({type:"300 sec game"});
+    return res.status(200).json(getdata);
+  } catch (error) {
+    return res.status(500).json(error.message);
+  }
+};
 
 
 const getFilteredStudent = async (req, res) => {
@@ -95,6 +121,27 @@ const signup = async (req, res) => {
   }
 };
 
+const datadb = async (req, res) => {
+  console.log("hell");
+  try {
+    console.log(req.body);
+    const data = {
+      wpm: req.body.data1,
+      accuracy: req.body.data2,
+      type: req.body.data4+" sec game",
+      time: req.body.data3,
+    };
+
+    const inp1 = new Datainp(data);
+    await inp1.save();
+
+    return res.status(200).json(inp1);
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json(error.message);
+  }
+};
+
 const signin = async (req, res) => {
   try {
     console.log("get login data", req.query.email);
@@ -107,8 +154,13 @@ const signin = async (req, res) => {
     return res.status(500).json(error.message);
   }
 };
+
 export {
   postmsg,
   signup,
-  signin
+  signin,
+  datadb,
+  data1,
+  data2,
+  data3,
 };

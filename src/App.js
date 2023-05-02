@@ -17,17 +17,17 @@ function App() {
   },[login])
   return (
     <>
-   
+
     <Routes>
-      <Route path='/'  element={<Base props={{login,setlogin}}/>} ></Route>
-      <Route path='/test' element={<Test props={{login,setlogin}}/>} ></Route>
-      <Route path='/result'  element={<Result props={{login,setlogin}}/>} ></Route>
-      <Route path='/signin'  element={<Login props={{login,setlogin}}/>} ></Route>
-      <Route path='/signup'  element={<Createsignup props={{login,setlogin}}/>} ></Route>
-      <Route path='/contact'  element={<ContactForm props={{login,setlogin}}/>} ></Route>
-      <Route path='/profile'  element={<Proflie props={{login,setlogin}}/>} ></Route>
-      <Route path='/header'  element={<Header props={{login,setlogin}}/>} ></Route>
-      <Route path='/stats'  element={<Render />} ></Route>
+      <Route path='/'  element={<Base  />} ></Route>
+      <Route path='/test' element={<Test  />} ></Route>
+      <Route path='/result'  element={<Result  />} ></Route>
+      <Route path='/signin'  element={<Login  />} ></Route>
+      <Route path='/signup'  element={<Createsignup  />} ></Route>
+      <Route path='/contact'  element={<ContactForm  />} ></Route>
+      <Route path='/profile'  element={<Proflie  />} ></Route>
+      <Route path='/header'  element={<Header  />} ></Route>
+      <Route path='/stats'  element={<profile />} ></Route>
       
 
     </Routes>

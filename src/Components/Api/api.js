@@ -45,16 +45,16 @@ const logindata = async (data) => {
     }
   };
 
-// const logindata = async (data) => {
-//     try {
-//         console.log("get data sending", data);
-//         const response = await axios.get(`${url}/signin`, data);
-//         console.log("get data response receiving", response);
+const dbdataadd = async (data) => {
+    try {
+        console.log("get data sending", data);
+        const response = await axios.post(`${url}/dataadd`, data);
+        console.log("get data response receiving", response);
         
-//         return response;
-//     } catch (error) {
-//         console.log("Error while contact API", error.message);
-//     }
-// };
+        return response;
+    } catch (error) {
+        console.log("Error while contact API", error.message);
+    }
+};
 
-export { addcontact ,Newuser,logindata}
+export { addcontact ,Newuser,logindata,dbdataadd}

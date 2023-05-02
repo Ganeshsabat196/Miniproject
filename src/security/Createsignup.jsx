@@ -33,7 +33,8 @@ export default function Createsignup() {
                 <MDBInput wrapperClass='mb-4 w-100' label='Password' id='password' type='password' size="lg" style={{ border: "1px solid", borderRadius: "10px", padding: "8px" }} />
                 <MDBInput wrapperClass='mb-4 w-100' label='Repeat Password' id='rpassword' type='password' size="lg" style={{ border: "1px solid", borderRadius: "10px", padding: "8px" }} />
 
-                <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='Remember password' onClick={() => {
+                <MDBCheckbox name='flexCheck' id='flexCheckDefault' className='mb-4' label='check here' onClick={() => {
+                  console.log("click");
                   if (logbtn) {
                     setLogbtn(false)
                   } else {

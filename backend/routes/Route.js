@@ -1,13 +1,18 @@
 import express from "express";
 
 // controllers
-import { postmsg, signin, signup } from "../controller/StudentsController.js";
+import { data1, data2, data3, datadb, postmsg, signin, signup } from "../controller/StudentsController.js";
 
 const route = express.Router();
 
 route.get('/signin',signin); 
 route.post('/postmsg',postmsg);
 route.post('/signup',signup); 
+route.post('/dataadd',datadb); 
+route.get('/data',data1); 
+route.get('/data2',data2); 
+route.get('/data3',data3); 
+
 
 // students
 // route.post('/student/getstudent', getStudent); // single student based on id
